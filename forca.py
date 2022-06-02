@@ -9,4 +9,4 @@ dica_treis = input('Digitea terceira dica: ')
 palavra_passe.append(escolha_da_palavra)
 
 while True:
-    print('texte')
+    print('teste')
