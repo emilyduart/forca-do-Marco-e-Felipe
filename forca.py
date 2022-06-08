@@ -1,19 +1,21 @@
 from itertools import count
 from unicodedata import numeric
+import os
 
 
-palavra_passe = []
 escolha_da_palavra = input('Digite sua palavra chave: ')
 dica_um = input('Digitea primeira dica: ')
 dica_dois = input('Digitea segunda dica: ')
 dica_treis = input('Digitea terceira dica: ') 
 
-palavra_passe.append(escolha_da_palavra)
+
 
 dica = -1
 
-for range in palavra_passe:
-    numero_asterisco = len(palavra_passe[0]) * '*' 
+os.system ('cls')
+
+for range in escolha_da_palavra:
+    numero_asterisco = len(escolha_da_palavra) * '*' 
     print(numero_asterisco)
 while True:
     print('(1) Escolher uma letra.')
@@ -35,3 +37,6 @@ while True:
     else:
         print('Opição invalida!')
         break
+
+    if escolha_da_palavra.index(letra_ecolhilda) == True:
+        print('Letra certa!')
