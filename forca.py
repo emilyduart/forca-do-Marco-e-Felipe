@@ -15,6 +15,7 @@ erros = -1
 acertos = 0
 letras = []
 asteriscos = []
+letra_correta = 0
 
 os.system ('cls')
 
@@ -42,16 +43,21 @@ while True:
         letras.append(letra_escolhilda)
     else:
         print('Opição invalida!')
-        break
     print(letras)
     if letras[-1] in escolha_da_palavra:
         print('Letra certa!')
+        letra_correta += 1
+        numero_de_letras = len(asteriscos)
         lugar_da_letra = escolha_da_palavra.index(letras[-1])
         asteriscos.insert(lugar_da_letra, letras[-1])
         ultima_da_lista = len(asteriscos) -1
         ultima_letra = asteriscos[ultima_da_lista]
         asteriscos.remove(ultima_letra)
         print(asteriscos)
+        if letra_correta == numero_de_letras:
+            print('Você venceu!!')
+            input()
+            break
     else:
         print('Letra errada!')
         erros += 1
