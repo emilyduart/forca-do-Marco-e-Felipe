@@ -3,7 +3,7 @@ from unicodedata import numeric
 import os
 
 
-escolha_da_palavra = input('Digite sua palavra chave com um espaço: ')
+escolha_da_palavra = input('Digite sua palavra chave: ')
 dica_um = input('Digitea primeira dica: ')
 dica_dois = input('Digitea segunda dica: ')
 dica_treis = input('Digitea terceira dica: ') 
@@ -14,12 +14,13 @@ dica = -1
 erros = -1
 acertos = 0
 letras = []
+asteriscos = []
 
 os.system ('cls')
 
 for range in escolha_da_palavra:
     numero_asterisco = len(escolha_da_palavra) * '*' 
-    print(numero_asterisco)
+    asteriscos.append(numero_asterisco)
 while True:
     print('(1) Escolher uma letra.')
     print('(2) veja uma dica.')
@@ -45,6 +46,12 @@ while True:
     print(letras)
     if letras[-1] in escolha_da_palavra:
         print('Letra certa!')
+        lugar_da_letra = escolha_da_palavra.index(letras[-1])
+        asteriscos.insert(lugar_da_letra, letras[-1])
+        ultima_da_lista = len(asteriscos) -1
+        ultima_letra = asteriscos[ultima_da_lista]
+        asteriscos.remove(ultima_letra)
+        print(asteriscos)
     else:
         print('Letra errada!')
         erros += 1
